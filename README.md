@@ -55,6 +55,10 @@ no corpo json:
 	"password":"12345678912"
 }
 ````
+OBSERVAÇÃO: a partir daqui você precisa estar logado, quando a rota de login é acionada ela gera um token pegue esse token gerado e adcione ao header das rotas:
+````
+Authorization Bearer 1|oppeQ2fRF8cBCsqBxMB5x7b38pwNWCjrm5Kiv8HK
+```` 
 
 rota de criação de livro: http://127.0.0.1:8000/api/book/create
 no corpo json:
@@ -67,9 +71,20 @@ no corpo json:
 }
 ````
 
+rota de edição de livro: http://127.0.0.1:8000/book/edit/{id}
+no corpo json
+````
+{
+	"titulo":"Titulo exemplo",
+	"descricao":"Descrição exemplo",
+	"autor":"autor exemplo"
+}
+````
+rota de apagar livro: http://127.0.0.1:8000/book/delete/{id}
+
 rota que retorna todos os livros cadastrados: http://127.0.0.1:8000/api/books 
 
-rota que retorna um livro e seu dono: http://127.0.0.1:8000/api/books/show/1
+rota que retorna um livro e seu dono: http://127.0.0.1:8000/api/books/show/{id}
 
 rota de aluguel: http://127.0.0.1:8000/api/rent/create
 no corpo json: 
@@ -80,4 +95,4 @@ no corpo json:
 	"data_entrega":"2001/12/12"
 }
 ````
-rota que retorna os alugueis de um livro: http://127.0.0.1:8000/api/rent/1
+rota que retorna os alugueis de um livro: http://127.0.0.1:8000/api/rent/{id}
